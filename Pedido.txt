@@ -1,0 +1,5 @@
+Código: 1002
+Nombre: cubo2
+Cantidad: 2
+Costo: 250.0
+------------------------------

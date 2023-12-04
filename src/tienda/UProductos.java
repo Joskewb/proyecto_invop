@@ -1,8 +1,6 @@
 package tienda;
 
 import java.awt.BorderLayout;
-
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -17,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,10 +23,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.ImageIcon;
 
-public class JFProducts extends JFrame {
-	//CatalogoGestion catalogoGestion;
+public class UProductos extends JFrame {
+	
 	JScrollPane scrollPane;
     private boolean scrolled = false;
     PanelAccesorio panelmods;
@@ -35,24 +33,12 @@ public class JFProducts extends JFrame {
     JPanel panelTarjetas;
     JPanel panelTarjetasContenido;
     JPanel panelLateral;
-    panelDescripcion p;
+    UdescripcionCubo p;
     panelDescripcionMod pm;
     panelDescripcionAccesorio pa;
     JLabel lblCubos;
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					JFProducts frame = new JFProducts();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	public JFProducts() {
+	public UProductos() {
 		
 		getContentPane().setBackground(Color.BLACK);
     	getContentPane().setLayout(null);
@@ -74,11 +60,11 @@ public class JFProducts extends JFrame {
         
         scrollPane = new JScrollPane(panelTarjetasContenido);
         
-        JButton btnAgregarCubo = new JButton("Nuevo");
-        btnAgregarCubo.setFont(new Font("Bahnschrift", Font.PLAIN, 13));
-        btnAgregarCubo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/verde(1000x700).jpg")));
-        btnAgregarCubo.setBounds(715, 11, 100, 40);
-        panelTarjetas.add(btnAgregarCubo);
+        JButton btnPedido = new JButton("Pedido");
+        btnPedido.setBackground(new Color(130, 214, 103));
+        btnPedido.setFont(new Font("Bahnschrift", Font.PLAIN, 13));
+        btnPedido.setBounds(715, 11, 100, 40);
+        panelTarjetas.add(btnPedido);
         
         lblCubos = new JLabel();
         lblCubos.setForeground(new Color(255, 255, 255));
@@ -114,7 +100,7 @@ public class JFProducts extends JFrame {
         btnProductos.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                JFProducts n = new JFProducts();
+                UProductos n = new UProductos();
                 n.setVisible(true);
         	}
         });
@@ -128,8 +114,8 @@ public class JFProducts extends JFrame {
         btnInicio.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                inicio n = new inicio();
-                n.setVisible(true);
+                // n = new inicio();
+                //n.setVisible(true);
         	}
         });
         btnInicio.setBounds(175, 50, 75, 30);
@@ -160,26 +146,8 @@ public class JFProducts extends JFrame {
         		List<Cubos> listaCubos = obtenerListaCubosDesdeArchivo("Cubos.txt");
                 cargarBotonesCubos(listaCubos);
                 lblCubos.setText("Cubos");
-                btnAgregarCubo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/rojo(1000x700).jpg")));
-                btnAgregarCubo.addActionListener(new ActionListener() {
-                	public void actionPerformed(ActionEvent e) {
-                		RegistroProductoCubo p=new RegistroProductoCubo();
-                		p.setSize(1000,540);
-        				p.setLocation(0,120);
-        				getContentPane().remove(panelTarjetasContenido);
-        				getContentPane().remove(panelTarjetas);
-                        getContentPane().remove(panelLateral);
-                        getContentPane().remove(scrollPane);
-                        panelTarjetasContenido.setVisible(false);
-                        panelTarjetas.setVisible(false);
-                        panelLateral.setVisible(false);
-                        scrollPane.setVisible(false);
-                        getContentPane().add(p, BorderLayout.CENTER);
-        				revalidate();
-        				repaint();
-                		
-                	}
-                });
+                btnPedido.setBackground(new Color(230, 110, 111));
+                
         	}
         });
 		panelLateral.setLayout(null);
@@ -196,26 +164,7 @@ public class JFProducts extends JFrame {
         		lblCubos.setText("Mods");
         		List<Cubos> listaMods = obtenerListaModsDesdeArchivo("Mod.txt");
                 cargarBotonesMods(listaMods);
-                btnAgregarCubo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/amarillo(1000x700).jpg")));
-                btnAgregarCubo.addActionListener(new ActionListener() {
-                	public void actionPerformed(ActionEvent e) {
-                		RegistroProductoMod p=new RegistroProductoMod();
-                		p.setSize(1000,540);
-        				p.setLocation(0,120);
-        				getContentPane().remove(panelTarjetasContenido);
-        				getContentPane().remove(panelTarjetas);
-                        getContentPane().remove(panelLateral);
-                        getContentPane().remove(scrollPane);
-                        panelTarjetasContenido.setVisible(false);
-                        panelTarjetas.setVisible(false);
-                        panelLateral.setVisible(false);
-                        scrollPane.setVisible(false);
-                        getContentPane().add(p, BorderLayout.CENTER);
-        				revalidate();
-        				repaint();
-                		
-                	}
-                });
+                btnPedido.setBackground(new Color(255, 219, 89));
         	}
         });
 		btnMods.setBounds(0, 150, 160, 50);
@@ -231,31 +180,32 @@ public class JFProducts extends JFrame {
         		lblCubos.setText("Lubricantes y accesorios");
         		List<Accesorio> listaAccesorios = obtenerListaAccesoriosDesdeArchivo("Accesorios.txt");
                 cargarBotonesAccesorios(listaAccesorios);
-                btnAgregarCubo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/Azul(1000x700).jpg")));
-                btnAgregarCubo.addActionListener(new ActionListener() {
-                	public void actionPerformed(ActionEvent e) {
-                		RegistroProductoAccesorio p=new RegistroProductoAccesorio();
-                		p.setSize(1000,540);
-        				p.setLocation(0,120);
-        				getContentPane().remove(panelTarjetasContenido);
-        				getContentPane().remove(panelTarjetas);
-                        getContentPane().remove(panelLateral);
-                        getContentPane().remove(scrollPane);
-                        panelTarjetasContenido.setVisible(false);
-                        panelTarjetas.setVisible(false);
-                        panelLateral.setVisible(false);
-                        scrollPane.setVisible(false);
-                        getContentPane().add(p, BorderLayout.CENTER);
-        				revalidate();
-        				repaint();
-                		
-                	}
-                });
+                btnPedido.setBackground(new Color(113, 124, 231));
 
         	}
         });
 		btnAccesorios.setBounds(0, 200, 160, 50);
 		panelLateral.add(btnAccesorios);
+		
+		btnPedido.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		UFPedido p=new UFPedido();
+        		p.setSize(1000,540);
+				p.setLocation(0,120);
+				getContentPane().remove(panelTarjetasContenido);
+				getContentPane().remove(panelTarjetas);
+                getContentPane().remove(panelLateral);
+                getContentPane().remove(scrollPane);
+                panelTarjetasContenido.setVisible(false);
+                panelTarjetas.setVisible(false);
+                panelLateral.setVisible(false);
+                scrollPane.setVisible(false);
+                getContentPane().add(p, BorderLayout.CENTER);
+				revalidate();
+				repaint();
+        		
+        	}
+        });
 		
 		JLabel txProductos = new JLabel("Productos");
 		txProductos.setForeground(new Color(255, 255, 255));
@@ -285,7 +235,7 @@ public class JFProducts extends JFrame {
             btnprod.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                	p=new panelDescripcion(cubo);
+                	p=new UdescripcionCubo(cubo);
             		p.setSize(1000,540);
     				p.setLocation(0,120);
     				p.setVisible(true);
@@ -499,4 +449,17 @@ public class JFProducts extends JFrame {
     private String extraerValor(String linea, String etiqueta) {
         return linea.substring(etiqueta.length()).trim();
     }
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UProductos frame = new UProductos();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
 }

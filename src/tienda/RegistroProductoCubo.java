@@ -2,6 +2,7 @@ package tienda;
 
 import javax.swing.JPanel;
 
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -14,6 +15,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
+import java.util.Optional;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
@@ -41,8 +44,10 @@ public class RegistroProductoCubo extends JPanel {
 	private JButton btnSave;
 	private JLabel lblAñadirCubo;
 	private JTextField txCodigo;
+	private String archivo="Cubos.txt";
 	private JFrame parentFrame;
 	JComboBox cboxTipo;
+	private static JFProducts jfProductsInstance;
 
 	public RegistroProductoCubo() {
 		setLayout(null);
@@ -157,7 +162,7 @@ public class RegistroProductoCubo extends JPanel {
                 }
 			}
 		});
-		btnSave.setBounds(510, 474, 400, 50);
+		btnSave.setBounds(510, 435, 400, 50);
 		add(btnSave);
 		
 		lblAñadirCubo = new JLabel("Nuevo Cubo:");
@@ -183,9 +188,24 @@ public class RegistroProductoCubo extends JPanel {
 		cboxTipo.addItem("Megaminx");
 		cboxTipo.addItem("Square-1");
 		cboxTipo.addItem("Clock");
+		
+		JButton btnBack = new JButton(">");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				JFProducts p= new JFProducts();
+				removeAll();
+				p.setVisible(true);
+				revalidate();
+				repaint();
+				
+			}
+		});
+		btnBack.setBounds(915, 40, 50, 50);
+		add(btnBack);
 	}
 	private void guardarDatosEnArchivo() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Cubos1.txt", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true))) {
             String nombre = txNombre.getText();
             String marca = txMarca.getText();
             String tipo = cboxTipo.getSelectedItem().toString();
@@ -237,6 +257,7 @@ public class RegistroProductoCubo extends JPanel {
         lblFoto.setIcon(new ImageIcon(""));
         
     }
+    
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {

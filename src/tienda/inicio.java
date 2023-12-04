@@ -36,7 +36,7 @@ public class inicio extends JFrame {
 
     public inicio() {
     	getContentPane().setBackground(Color.BLACK);
-    	setLayout(null);
+    	getContentPane().setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900,600);
         setLocationRelativeTo(null);
@@ -73,16 +73,12 @@ public class inicio extends JFrame {
         btnInicio.setBounds(175, 50, 75, 30);
         getContentPane().add(btnInicio);
 
-        JButton btnOfertas = new JButton("Ofertas");
-        btnOfertas.setBounds(330, 50, 75, 30);
-        getContentPane().add(btnOfertas);
-
         JButton btnPaquetes = new JButton("Paquetes");
-        btnPaquetes.setBounds(405, 50, 80, 30);
+        btnPaquetes.setBounds(330, 50, 80, 30);
         getContentPane().add(btnPaquetes);
 
         JButton btnNosotros = new JButton("Nosotros");
-        btnNosotros.setBounds(485, 50, 80, 30);
+        btnNosotros.setBounds(410, 50, 80, 30);
         getContentPane().add(btnNosotros);
 
 

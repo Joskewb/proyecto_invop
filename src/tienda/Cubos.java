@@ -24,6 +24,9 @@ public class Cubos extends Catalogo {
 	public double getLargo() {
 		return largo;
 	}
+	public double getAncho() {
+		return ancho;
+	}
 	public void setTipo(String tipo) {
 		this.tipo=tipo;
 	}

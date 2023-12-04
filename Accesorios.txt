@@ -1,0 +1,7 @@
+Codigo: 3001
+Nombre: accesorio1
+Precio: 70.0
+Marca: marca2
+Ruta: C:\Users\HP\Downloads\imagenes libro subir\YaNoQuieroSerUniversitario.jpg
+Tamaño: 4.0
+------------------------------

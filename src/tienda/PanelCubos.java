@@ -13,6 +13,7 @@ public class PanelCubos extends JPanel {
     private List<Cubos> listaCubos;
 
     public PanelCubos(Cubos cubo) {
+    	setBackground(new Color(105, 105, 105));
         this.listaCubos = listaCubos;
         setLayout(null);
         
@@ -20,12 +21,12 @@ public class PanelCubos extends JPanel {
     
         JLabel lblFoto = new JLabel();
         lblFoto.setIcon(new ImageIcon(cubo.getRuta()));
-        lblFoto.setBounds(49, 65, 250, 300);
+        lblFoto.setBounds(71, 62, 250, 300);
         add(lblFoto);
         
         JLabel lblCodigo = new JLabel("C: "+cubo.getCodigo());
         lblCodigo.setFont(new Font("Bahnschrift", Font.PLAIN, 14));
-        lblCodigo.setBounds(23, 30, 127, 24);
+        lblCodigo.setBounds(44, 27, 127, 24);
         add(lblCodigo);
         
         JLabel lblTipo = new JLabel(cubo.getTipo());
@@ -36,7 +37,7 @@ public class PanelCubos extends JPanel {
         
         JLabel lblNombre = new JLabel(cubo.getNombre());
         lblNombre.setFont(new Font("Bahnschrift", Font.BOLD, 18));
-        lblNombre.setBounds(23, 383, 312, 30);
+        lblNombre.setBounds(46, 384, 312, 30);
         add(lblNombre);
         
         JLabel lblPrecio = new JLabel("Bs. "+cubo.getPrecio());
@@ -44,8 +45,13 @@ public class PanelCubos extends JPanel {
         lblPrecio.setForeground(new Color(128, 0, 0));
         lblPrecio.setFont(new Font("Bahnschrift", Font.BOLD, 25));
         
-        lblPrecio.setBounds(220, 426, 115, 42);
+        lblPrecio.setBounds(231, 412, 115, 42);
         add(lblPrecio);
+        
+        JLabel lbfondo = new JLabel("New label");
+        lbfondo.setIcon(new ImageIcon(PanelAccesorio.class.getResource("/imagenes/blanco(1000x700).jpg")));
+        lbfondo.setBounds(20, 15, 355, 450);
+        add(lbfondo);
 
     }
     private List<Cubos> obtenerListaCubosDesdeArchivo(String nombreArchivo) {

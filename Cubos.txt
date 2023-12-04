@@ -1,0 +1,6 @@
+Código: 1001
+Nombre: Cubo1
+Precio: 90.0
+Cantidad: 1
+Costo: 90.0
+------------------------------
