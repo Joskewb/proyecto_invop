@@ -1,0 +1,24 @@
+Código: 1002
+Nombre: Cubo2
+Precio: 50.0
+Cantidad: 5
+Costo: 250.0
+------------------------------
+Código: 3001
+Nombre: accesorio1
+Precio: 70.0
+Cantidad: 2
+Costo: 140.0
+------------------------------
+Código: 1001
+Nombre: cubo1
+Precio: 80.0
+Cantidad: 3
+Costo: 240.0
+------------------------------
+Código: 2001
+Nombre: Mod1
+Precio: 90.0
+Cantidad: 2
+Costo: 180.0
+------------------------------

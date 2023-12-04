@@ -148,7 +148,7 @@ public class panelDescripcionAccesorio extends JPanel {
 		add(btnSave);
 		btnSave.setVisible(false);
 
-        lblAñadirAcce = new JLabel("Nuevo accesorio/lubricante:");
+        lblAñadirAcce = new JLabel("Descripcion accesorio/lubricante:");
         lblAñadirAcce.setFont(new Font("Bahnschrift", Font.PLAIN, 40));
         lblAñadirAcce.setBounds(62, 37, 671, 50);
         add(lblAñadirAcce);

@@ -3,7 +3,6 @@ package tienda;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -21,30 +20,26 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class UdescripcionCubo extends JPanel {
+public class UdescripcionMod extends JPanel {
 	private JTextField txNombre;
 	private JTextField txPrecio;
 	private JTextField txMarca;
-	private JTextField txAlto;
-	private JTextField txAncho;
-	private JTextField txLargo;
 	private JLabel lblFoto;
 	private JButton btnCarrito;
-	private JLabel lblAñadirCubo;
+	private JLabel lblAñadirMod;
 	private JTextField txCodigo, txTipo;
-	private Cubos cuboActual;
-	JComboBox cboxCantidad;
+	JComboBox cboxCantidad ;
 	private String archivo="Carrito.txt";
 	private List<Pedido> carrito = new ArrayList<>();
 	private Pedido productoPedido;
-
-	public UdescripcionCubo(Cubos cubo) {
-		setBackground(Color.WHITE);
-		this.cuboActual=cubo;
+	
+	private Cubos modActual;
+	public UdescripcionMod(Cubos mod) {
+		this.modActual=mod;
+		
 		setLayout(null);
 		setBounds(0,0,1000,540);
 		Font f=new Font("Bahnschrift", Font.PLAIN, 20);
@@ -73,21 +68,7 @@ public class UdescripcionCubo extends JPanel {
 		lblTipo.setFont(f);
 		lblTipo.setBounds(698, 240, 54, 25);
 		add(lblTipo);
-		
-		JLabel lblAlto = new JLabel("Alto:");
-		lblAlto.setFont(f);
-		lblAlto.setBounds(429, 361, 54, 25);
-		add(lblAlto);
-		
-		JLabel lblAncho = new JLabel("Ancho:");
-		lblAncho.setFont(f);
-		lblAncho.setBounds(598, 361, 71, 25);
-		add(lblAncho);
-		
-		JLabel lblLargo = new JLabel("Largo:");
-		lblLargo.setFont(f);
-		lblLargo.setBounds(757, 361, 64, 25);
-		add(lblLargo);
+
 		
 		txCodigo = new JTextField();
 		txCodigo.setEditable(false);
@@ -113,24 +94,6 @@ public class UdescripcionCubo extends JPanel {
 		txMarca.setBounds(500, 293, 410, 35);
 		add(txMarca);
 		
-		txAlto = new JTextField();
-		txAlto.setEditable(false);
-		txAlto.setColumns(10);
-		txAlto.setBounds(500, 356, 80, 35);
-		add(txAlto);
-		
-		txAncho = new JTextField();
-		txAncho.setEditable(false);
-		txAncho.setColumns(10);
-		txAncho.setBounds(667, 356, 80, 35);
-		add(txAncho);
-		
-		txLargo = new JTextField();
-		txLargo.setEditable(false);
-		txLargo.setColumns(10);
-		txLargo.setBounds(830, 356, 80, 35);
-		add(txLargo);
-		
 		txTipo = new JTextField();
 		txTipo.setEditable(false);
         txTipo.setBounds(760, 237, 150, 30);
@@ -138,40 +101,39 @@ public class UdescripcionCubo extends JPanel {
         txTipo.setColumns(10);
         
         
-        txCodigo.setText(""+cubo.getCodigo());
-        txNombre.setText(cubo.getNombre());
-        txPrecio.setText(""+cubo.getPrecio());
-        txMarca.setText(cubo.getMarca());
-        txAlto.setText(""+cubo.getAlto());
-        txAncho.setText(""+cubo.getAncho());
-        txLargo.setText(""+cubo.getLargo());
-        txTipo.setText(cubo.getTipo());
+        txCodigo.setText(""+mod.getCodigo());
+        txNombre.setText(mod.getNombre());
+        txPrecio.setText(""+mod.getPrecio());
+        txMarca.setText(mod.getMarca());
+        txTipo.setText(mod.getTipo());
 		
-		lblFoto = new JLabel("imagen");
-		lblFoto.setIcon(new ImageIcon(cubo.getRuta()));
+		lblFoto = new JLabel();
+		lblFoto.setIcon(new ImageIcon(mod.getRuta()));
 		lblFoto.setFont(new Font("Bahnschrift", Font.PLAIN, 20));
 		lblFoto.setBounds(64, 113, 250, 300);
 		add(lblFoto);
 		
+		
+		lblAñadirMod = new JLabel("Descripcion Mod:");
+		lblAñadirMod.setFont(new Font("Bahnschrift", Font.PLAIN, 40));
+		lblAñadirMod.setBounds(62, 37, 450, 50);
+		add(lblAñadirMod);
+		
+        
 		btnCarrito = new JButton("Añadir al carrito");
 		btnCarrito.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int cantidad = (int) cboxCantidad.getSelectedItem();
-		        double costoProducto = cubo.getPrecio() * cantidad;
-		        productoPedido = new Pedido(cubo.getCodigo(), cubo.getNombre(), cubo.getPrecio(), cantidad, costoProducto);
+		        double costoProducto = mod.getPrecio() * cantidad;
+		        productoPedido = new Pedido(mod.getCodigo(), mod.getNombre(), mod.getPrecio(), cantidad, costoProducto);
 		        carrito.add(productoPedido);
 		        guardarCarritoEnArchivo();
-		        JOptionPane.showMessageDialog(UdescripcionCubo.this, "Producto añadido al carrito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+		        JOptionPane.showMessageDialog(UdescripcionMod.this, "Producto añadido al carrito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		btnCarrito.setBounds(730, 470, 180, 50);
 		add(btnCarrito);
 		btnCarrito.setVisible(true);
-		
-		lblAñadirCubo = new JLabel("Descripcion:");
-		lblAñadirCubo.setFont(new Font("Bahnschrift", Font.PLAIN, 40));
-		lblAñadirCubo.setBounds(62, 37, 494, 50);
-		add(lblAñadirCubo);
         
         JButton btnBack = new JButton(">");
 		btnBack.addActionListener(new ActionListener() {

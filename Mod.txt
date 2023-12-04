@@ -19,3 +19,10 @@ Marca: marca1
 Ruta: javax.swing.ImageIcon@100fa058
 Tipo: 6x6
 ------------------------------
+Codigo: 2008
+Nombre: mod6
+Precio: 65.0
+Marca: marca4
+Ruta: javax.swing.ImageIcon@76d34f26
+Tipo: 5x5
+------------------------------

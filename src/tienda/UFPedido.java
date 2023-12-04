@@ -44,6 +44,8 @@ public class UFPedido extends JFrame {
     panelDescripcionAccesorio pa;
     JLabel lblCubos;
     JTable tablePedido;
+    JLabel lblTotal;
+    private double total = 0;
 	public UFPedido() {
 		
 		getContentPane().setBackground(Color.BLACK);
@@ -117,7 +119,7 @@ public class UFPedido extends JFrame {
         
         
         scrollPane = new JScrollPane();
-        scrollPane.setBounds(53, 127, 861, 364);
+        scrollPane.setBounds(53, 127, 861, 303);
         panelInferior.add(scrollPane);
 
         tablePedido = new JTable();
@@ -134,12 +136,12 @@ public class UFPedido extends JFrame {
         tablePedido.getColumnModel().getColumn(3).setPreferredWidth(50);
         tablePedido.getColumnModel().getColumn(4).setPreferredWidth(50);
         scrollPane.setViewportView(tablePedido);
-        tablePedido.setDefaultEditor(Object.class, null);
         
-        JButton btnEliminar = new JButton("Eliminar");
+        JButton btnEliminar = new JButton("Eliminar del carrito");
+        btnEliminar.setBackground(new Color(255, 219, 89));
         btnEliminar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	int filaSeleccionada = tablePedido.getSelectedRow();
+        	public void actionPerformed(ActionEvent e) {
+        		int filaSeleccionada = tablePedido.getSelectedRow();
                 if (filaSeleccionada >= 0) {
                     int confirmacion = JOptionPane.showConfirmDialog(
                             null,
@@ -164,31 +166,57 @@ public class UFPedido extends JFrame {
                             "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
-            }
+        	}
         });
-        btnEliminar.setBounds(100, 650, 150, 45);
+        btnEliminar.setBounds(60, 464, 150, 38);
         panelInferior.add(btnEliminar);
+        
+        JButton btnBack = new JButton(">");
+        btnBack.setBackground(new Color(255, 255, 255));
+        btnBack.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+        		UProductos p=new UProductos();
+        		p.setVisible(true);
+        	}
+        });
+        btnBack.setBounds(864, 51, 50, 50);
+        panelInferior.add(btnBack);
+        
+        lblTotal = new JLabel();
+        lblTotal.setFont(new Font("Bahnschrift", Font.PLAIN, 30));
+        lblTotal.setForeground(new Color(255, 255, 255));
+        lblTotal.setBounds(679, 464, 235, 38);
+        panelInferior.add(lblTotal);
+        tablePedido.setDefaultEditor(Object.class, null);
+        
+        
         cargarDatosDesdeArchivo(archivo);
         
 		
 	}
 	private void cargarDatosDesdeArchivo(String nombreArchivo) {
-        List<Pedido> listaProductos = obtenerListaProductosDesdeArchivo(nombreArchivo);
+	    List<Pedido> listaProductos = obtenerListaProductosDesdeArchivo(nombreArchivo);
+	    DefaultTableModel modelo = (DefaultTableModel) tablePedido.getModel();
+	    modelo.setRowCount(0); 
 
-        DefaultTableModel modelo = (DefaultTableModel) tablePedido.getModel();
-        modelo.setRowCount(0); // Limpiar la tabla antes de cargar nuevos datos
+	    total = 0; 
+	    for (Pedido producto : listaProductos) {
+	        Object[] fila = new Object[modelo.getColumnCount()];
+	        fila[0] = producto.getCodigoProducto();
+	        fila[1] = producto.getNombre();
+	        fila[2] = producto.getPrecio();
+	        fila[3] = producto.getCantidad();
+	        fila[4] = producto.getCosto();
 
-        for (Pedido producto : listaProductos) {
-            Object[] fila = new Object[modelo.getColumnCount()];
-            fila[0] = producto.getCodigoProducto();
-            fila[1] = producto.getNombre();
-            fila[2] = producto.getPrecio();
-            fila[3] = producto.getCantidad();
-            fila[4] = producto.getCosto();
+	        modelo.addRow(fila);
+	        total += producto.getCosto();
+	    }
 
-            modelo.addRow(fila);
-        }
-    }
+	    // Actualizar el texto del JLabel con el total calculado
+	    lblTotal.setText("Total: Bs. " + total);
+	}
+
 	 private void eliminarProducto(int cProducto) {
 	        List<Pedido> listaProductos = obtenerListaProductosDesdeArchivo(archivo);
 

@@ -34,8 +34,8 @@ public class UProductos extends JFrame {
     JPanel panelTarjetasContenido;
     JPanel panelLateral;
     UdescripcionCubo p;
-    panelDescripcionMod pm;
-    panelDescripcionAccesorio pa;
+    UdescripcionMod pm;
+    UdescripccionAccesorio pa;
     JLabel lblCubos;
 
 	public UProductos() {
@@ -189,21 +189,9 @@ public class UProductos extends JFrame {
 		
 		btnPedido.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
+        		dispose();
         		UFPedido p=new UFPedido();
-        		p.setSize(1000,540);
-				p.setLocation(0,120);
-				getContentPane().remove(panelTarjetasContenido);
-				getContentPane().remove(panelTarjetas);
-                getContentPane().remove(panelLateral);
-                getContentPane().remove(scrollPane);
-                panelTarjetasContenido.setVisible(false);
-                panelTarjetas.setVisible(false);
-                panelLateral.setVisible(false);
-                scrollPane.setVisible(false);
-                getContentPane().add(p, BorderLayout.CENTER);
-				revalidate();
-				repaint();
-        		
+        		p.setVisible(true);
         	}
         });
 		
@@ -348,7 +336,7 @@ public class UProductos extends JFrame {
             btnprod.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                	pm=new panelDescripcionMod(cubo);
+                	pm=new UdescripcionMod(cubo);
             		pm.setSize(1000,540);
     				pm.setLocation(0,120);
     				pm.setVisible(true);
@@ -422,7 +410,7 @@ public class UProductos extends JFrame {
             btnprod.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                	pa=new panelDescripcionAccesorio(acce);
+                	pa=new UdescripccionAccesorio(acce);
             		pa.setSize(1000,540);
     				pa.setLocation(0,120);
     				pa.setVisible(true);

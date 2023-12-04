@@ -5,3 +5,10 @@ Marca: marca2
 Ruta: C:\Users\HP\Downloads\imagenes libro subir\YaNoQuieroSerUniversitario.jpg
 Tamaño: 4.0
 ------------------------------
+Codigo: 3004
+Nombre: lubricante1
+Precio: 15.0
+Marca: marca3
+Ruta: javax.swing.ImageIcon@1ce82adc
+Tamaño: 10.0
+------------------------------
