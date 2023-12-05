@@ -96,7 +96,9 @@ public class login extends JFrame {
                     n.setVisible(true);
                 }else {
                 	if (autenticarUsuario(username,password)) {
-                		JOptionPane.showMessageDialog(login.this, "si ingresaste hehe", "Error", JOptionPane.ERROR_MESSAGE);
+                		dispose();
+                		UInicio n=new UInicio();
+                		n.setVisible(true);
                 	}else {
                 		JOptionPane.showMessageDialog(login.this, "Usuario o contraseña incorrectos", "Error de autenticación", JOptionPane.ERROR_MESSAGE);
                 	}

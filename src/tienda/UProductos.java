@@ -82,12 +82,26 @@ public class UProductos extends JFrame {
         
         //Barra superior
         JButton btnLogo = new JButton("");
+        btnLogo.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+                UNosotros n = new UNosotros();
+                n.setVisible(true);
+        	}
+        });
         btnLogo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/user(80x80).jpg")));
         btnLogo.setHorizontalTextPosition(SwingConstants.CENTER);
         btnLogo.setBounds(882, 22, 80, 80);
         getContentPane().add(btnLogo);
 
         JButton btnUsuario = new JButton("");
+        btnUsuario.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+                UNosotros n = new UNosotros();
+                n.setVisible(true);
+        	}
+        });
         btnUsuario.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/logo(100x75).jpg")));
         btnUsuario.setHorizontalTextPosition(SwingConstants.CENTER);
         btnUsuario.setBounds(25, 25, 100, 75);
@@ -122,6 +136,13 @@ public class UProductos extends JFrame {
         getContentPane().add(btnInicio);
 
         JButton btnNosotros = new JButton("Nosotros");
+        btnNosotros.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+                UNosotros n = new UNosotros();
+                n.setVisible(true);
+        	}
+        });
         btnNosotros.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/Azul(1000x700).jpg")));
         btnNosotros.setHorizontalTextPosition(SwingConstants.CENTER);
         btnNosotros.setFont(new Font("Bahnschrift", Font.PLAIN, 12));

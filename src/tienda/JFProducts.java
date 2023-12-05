@@ -75,8 +75,8 @@ public class JFProducts extends JFrame {
         scrollPane = new JScrollPane(panelTarjetasContenido);
         
         JButton btnAgregarCubo = new JButton("Nuevo");
+        btnAgregarCubo.setBackground(new Color(130, 214, 103));
         btnAgregarCubo.setFont(new Font("Bahnschrift", Font.PLAIN, 13));
-        btnAgregarCubo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/verde(1000x700).jpg")));
         btnAgregarCubo.setBounds(715, 11, 100, 40);
         panelTarjetas.add(btnAgregarCubo);
         
@@ -90,18 +90,32 @@ public class JFProducts extends JFrame {
         getContentPane().add(scrollPane);
         
         
-        List<Cubos> listaCubos = obtenerListaCubosDesdeArchivo("Cubos1.txt");
+        List<Cubos> listaCubos = obtenerListaCubosDesdeArchivo("Cubos.txt");
         cargarBotonesCubos(listaCubos);
         
         
         //Barra superior
         JButton btnLogo = new JButton("");
+        btnLogo.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+                Nosotros n = new Nosotros();
+                n.setVisible(true);
+        	}
+        });
         btnLogo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/user(80x80).jpg")));
         btnLogo.setHorizontalTextPosition(SwingConstants.CENTER);
         btnLogo.setBounds(882, 22, 80, 80);
         getContentPane().add(btnLogo);
 
         JButton btnUsuario = new JButton("");
+        btnUsuario.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+                Nosotros n = new Nosotros();
+                n.setVisible(true);
+        	}
+        });
         btnUsuario.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/logo(100x75).jpg")));
         btnUsuario.setHorizontalTextPosition(SwingConstants.CENTER);
         btnUsuario.setBounds(25, 25, 100, 75);
@@ -136,6 +150,13 @@ public class JFProducts extends JFrame {
         getContentPane().add(btnInicio);
 
         JButton btnNosotros = new JButton("Nosotros");
+        btnNosotros.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+                Nosotros n = new Nosotros();
+                n.setVisible(true);
+        	}
+        });
         btnNosotros.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/Azul(1000x700).jpg")));
         btnNosotros.setHorizontalTextPosition(SwingConstants.CENTER);
         btnNosotros.setFont(new Font("Bahnschrift", Font.PLAIN, 12));
@@ -160,7 +181,7 @@ public class JFProducts extends JFrame {
         		List<Cubos> listaCubos = obtenerListaCubosDesdeArchivo("Cubos.txt");
                 cargarBotonesCubos(listaCubos);
                 lblCubos.setText("Cubos");
-                btnAgregarCubo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/rojo(1000x700).jpg")));
+                btnAgregarCubo.setBackground(new Color(230,110,111));
                 btnAgregarCubo.addActionListener(new ActionListener() {
                 	public void actionPerformed(ActionEvent e) {
                 		RegistroProductoCubo p=new RegistroProductoCubo();
@@ -196,7 +217,7 @@ public class JFProducts extends JFrame {
         		lblCubos.setText("Mods");
         		List<Cubos> listaMods = obtenerListaModsDesdeArchivo("Mod.txt");
                 cargarBotonesMods(listaMods);
-                btnAgregarCubo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/amarillo(1000x700).jpg")));
+                btnAgregarCubo.setBackground(new Color(255,219,89));
                 btnAgregarCubo.addActionListener(new ActionListener() {
                 	public void actionPerformed(ActionEvent e) {
                 		RegistroProductoMod p=new RegistroProductoMod();
@@ -231,7 +252,7 @@ public class JFProducts extends JFrame {
         		lblCubos.setText("Lubricantes y accesorios");
         		List<Accesorio> listaAccesorios = obtenerListaAccesoriosDesdeArchivo("Accesorios.txt");
                 cargarBotonesAccesorios(listaAccesorios);
-                btnAgregarCubo.setIcon(new ImageIcon(JFProducts.class.getResource("/imagenes/Azul(1000x700).jpg")));
+                btnAgregarCubo.setBackground(new Color(113,124,231));
                 btnAgregarCubo.addActionListener(new ActionListener() {
                 	public void actionPerformed(ActionEvent e) {
                 		RegistroProductoAccesorio p=new RegistroProductoAccesorio();

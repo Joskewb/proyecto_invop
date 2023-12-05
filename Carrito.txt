@@ -22,3 +22,9 @@ Precio: 90.0
 Cantidad: 2
 Costo: 180.0
 ------------------------------
+Código: 1001
+Nombre: cubo1
+Precio: 80.0
+Cantidad: 4
+Costo: 320.0
+------------------------------
