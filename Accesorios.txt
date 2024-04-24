@@ -1,14 +1,21 @@
-Codigo: 3001
-Nombre: accesorio1
-Precio: 70.0
-Marca: marca2
-Ruta: C:\Users\HP\Downloads\imagenes libro subir\YaNoQuieroSerUniversitario.jpg
-Tamaño: 4.0
-------------------------------
-Codigo: 3004
-Nombre: lubricante1
-Precio: 15.0
-Marca: marca3
-Ruta: javax.swing.ImageIcon@1ce82adc
+Codigo: 1
+Nombre: Weight-5
+Precio: 60.0
+Marca: Cubicle Labs
+Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\Weight5.png
 Tamaño: 10.0
+------------------------------
+Codigo: 2
+Nombre: DNM-37
+Precio: 90.0
+Marca: Cubicle Labs
+Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\Dnm37.jpg
+Tamaño: 10.0
+------------------------------
+Codigo: 3
+Nombre: Maru 
+Precio: 200.0
+Marca: Maru
+Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\maru.jpg
+Tamaño: 100.0
 ------------------------------

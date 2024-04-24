@@ -73,7 +73,7 @@ public class UFPedido extends JFrame {
         btnUsuario.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                UNosotros n = new UNosotros();
+                UInicio n = new UInicio();
                 n.setVisible(true);
         	}
         });
@@ -103,8 +103,8 @@ public class UFPedido extends JFrame {
         btnInicio.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                // n = new inicio();
-                //n.setVisible(true);
+                UInicio n = new UInicio();
+                n.setVisible(true);
         	}
         });
         btnInicio.setBounds(175, 50, 75, 30);
@@ -171,10 +171,8 @@ public class UFPedido extends JFrame {
                             JOptionPane.YES_NO_OPTION);
 
                     if (confirmacion == JOptionPane.YES_OPTION) {
-                        // Obtener el CI del usuario seleccionado
                         int cProducto = (int) tablePedido.getValueAt(filaSeleccionada, 0);
-                        
-                        // Llamar al método eliminarUsuario
+                      
                         eliminarProducto(cProducto);
                         
                         // Actualizar la visualización de la tabla
@@ -240,20 +238,13 @@ public class UFPedido extends JFrame {
 
 	 private void eliminarProducto(int cProducto) {
 	        List<Pedido> listaProductos = obtenerListaProductosDesdeArchivo(archivo);
-
-	        // Buscar el usuario con el CI proporcionado
 	        Optional<Pedido> productoAEliminar = listaProductos.stream()
 	                .filter(item -> item.getCodigoProducto() == cProducto)
 	                .findFirst();
-
-	        // Si se encuentra el usuario, eliminarlo de la lista
 	        productoAEliminar.ifPresent(item -> listaProductos.remove(item));
-
-	        // Guardar la lista actualizada en el archivo
 	        guardarListaProductosEnArchivo(listaProductos);
 	    }
 	 private void guardarListaProductosEnArchivo(List<Pedido> listaProductos) {
-	        // Guardar la lista de usuarios en el archivo
 	        try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo))) {
 	            for (Pedido item : listaProductos) {
 	            	 writer.write("Código: " + item.getCodigoProducto() + "\n");

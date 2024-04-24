@@ -274,7 +274,7 @@ public class panelDescripcion extends JPanel {
 		
 	}
 	 private void guardarListaCubosEnArchivo(List<Cubos> listaCubos) {
-	        // Guardar la lista de libros en el archivo
+	        // Guardar la lista en el archivo
 	        try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo))) {
 	            for (Cubos cubo : listaCubos) {
 	            	writer.write("Codigo: " + cubo.getCodigo() + "\n");

@@ -1,3 +1,15 @@
 Usuario: usuario1
 Contraseña: contra1
 ------------------------------
+Usuario: usuario2
+Contraseña: contra2
+------------------------------
+Usuario: lucero
+Contraseña: contra3
+------------------------------
+Usuario: apuchi
+Contraseña: 1234
+------------------------------
+Usuario: josias1
+Contraseña: josias
+------------------------------

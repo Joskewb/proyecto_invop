@@ -76,7 +76,7 @@ public class UProductos extends JFrame {
         getContentPane().add(scrollPane);
         
         
-        List<Cubos> listaCubos = obtenerListaCubosDesdeArchivo("Cubos1.txt");
+        List<Cubos> listaCubos = obtenerListaCubosDesdeArchivo("Cubos.txt");
         cargarBotonesCubos(listaCubos);
         
         
@@ -98,7 +98,7 @@ public class UProductos extends JFrame {
         btnUsuario.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                UNosotros n = new UNosotros();
+                UInicio n = new UInicio();
                 n.setVisible(true);
         	}
         });
@@ -128,8 +128,8 @@ public class UProductos extends JFrame {
         btnInicio.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                // n = new inicio();
-                //n.setVisible(true);
+                UInicio n = new UInicio();
+                n.setVisible(true);
         	}
         });
         btnInicio.setBounds(175, 50, 75, 30);
@@ -184,7 +184,7 @@ public class UProductos extends JFrame {
         	public void actionPerformed(ActionEvent e) {
         		lblCubos.setText("Mods");
         		List<Cubos> listaMods = obtenerListaModsDesdeArchivo("Mod.txt");
-                cargarBotonesMods(listaMods);
+        		cargarBotonesMods(listaMods);
                 btnPedido.setBackground(new Color(255, 219, 89));
         	}
         });

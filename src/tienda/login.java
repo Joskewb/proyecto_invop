@@ -41,8 +41,7 @@ public class login extends JFrame {
 		});
 	}
 	public login() {
-		//josiassirpa
-		//contraseña
+		
 		getContentPane().setBackground(Color.BLACK);
     	getContentPane().setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

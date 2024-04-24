@@ -105,7 +105,7 @@ public class Nosotros extends JFrame {
         btnUsuario.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                Nosotros n = new Nosotros();
+                inicio n = new inicio();
                 n.setVisible(true);
         	}
         });

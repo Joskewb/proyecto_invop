@@ -27,7 +27,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 
 public class JFProducts extends JFrame {
-	//CatalogoGestion catalogoGestion;
 	JScrollPane scrollPane;
     private boolean scrolled = false;
     PanelAccesorio panelmods;
@@ -94,7 +93,7 @@ public class JFProducts extends JFrame {
         cargarBotonesCubos(listaCubos);
         
         
-        //Barra superior
+        //Boton usuario
         JButton btnLogo = new JButton("");
         btnLogo.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
@@ -107,12 +106,12 @@ public class JFProducts extends JFrame {
         btnLogo.setHorizontalTextPosition(SwingConstants.CENTER);
         btnLogo.setBounds(882, 22, 80, 80);
         getContentPane().add(btnLogo);
-
+        //boton logo
         JButton btnUsuario = new JButton("");
         btnUsuario.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                Nosotros n = new Nosotros();
+                inicio n = new inicio();
                 n.setVisible(true);
         	}
         });

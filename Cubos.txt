@@ -1,20 +1,50 @@
-Codigo: 1001
-Nombre: cubo1
-Precio: 80.0
-Marca: marca1
-Ruta: C:\Users\HP\Downloads\imagenes libro subir\imagenYuXinLittle Magic5x5(250x300).jpg
-Tipo: 5x5
-Alto: 6.0
-Ancho: 6.0
-Largo: 6.0
+Codigo: 1
+Nombre: Gan 14 MagLev UV
+Precio: 610.0
+Marca: GAN
+Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\Gan 14.jpg
+Tipo: 3x3
+Alto: 3.0
+Ancho: 3.0
+Largo: 3.0
 ------------------------------
-Codigo: 1002
-Nombre: Cubo2
-Precio: 50.0
-Marca: marca9
-Ruta: C:\Users\HP\Downloads\imagenes libro subir\imagenYJYuChuangv2m 5x5 (250x300).jpg
+Codigo: 2
+Nombre: Tornado v3 Pioneer
+Precio: 295.0
+Marca: QiYi
+Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\Tornado v3.jpg
+Tipo: 3x3
+Alto: 3.0
+Ancho: 3.0
+Largo: 3.0
+------------------------------
+Codigo: 3
+Nombre: MGC 2x2 
+Precio: 90.0
+Marca: YJ
+Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\MGC2x2.jpg
+Tipo: 2x2
+Alto: 2.0
+Ancho: 2.0
+Largo: 2.0
+------------------------------
+Codigo: 4
+Nombre: YuChuang 5x5 
+Precio: 100.0
+Marca: YJ
+Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\imagenYJYuChuangv2m 5x5 (250x300).jpg
+Tipo: 5x5
+Alto: 5.0
+Ancho: 5.0
+Largo: 5.0
+------------------------------
+Codigo: 5
+Nombre: Apuchi
+Precio: 5000.0
+Marca: Catolica
+Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\Mystic.jpg
 Tipo: Pyraminx
-Alto: 8.0
-Ancho: 8.0
-Largo: 8.0
+Alto: 55.0
+Ancho: 55.0
+Largo: 55.0
 ------------------------------
