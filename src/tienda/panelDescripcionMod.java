@@ -18,6 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import tienda.AdminProductos.JFProducts;
+import tienda.entidades.Cubos;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -40,7 +43,7 @@ public class panelDescripcionMod extends JPanel {
 	private Cubos modActual;
 	public panelDescripcionMod(Cubos mod) {
 		this.modActual=mod;
-		
+		 
 		setLayout(null);
 		setBounds(0,0,1000,540);
 		Font f=new Font("Bahnschrift", Font.PLAIN, 20);
@@ -253,7 +256,7 @@ public class panelDescripcionMod extends JPanel {
         Optional<Cubos> modAEliminar = listaMods.stream()
                 .filter(cubo -> cubo.getCodigo()==(codigo))
                 .findFirst();
-
+ 
         // Si se encuentra el libro, eliminarlo de la lista
         modAEliminar.ifPresent(mod -> listaMods.remove(mod));
 
@@ -300,6 +303,8 @@ public class panelDescripcionMod extends JPanel {
 	        while ((linea = reader.readLine()) != null) {
 	            try {
 	                int codigo = Integer.parseInt(extraerValor(linea, "Codigo:"));
+	                int stock = Integer.parseInt(extraerValor(linea, "stock:"));
+
 	                String nombre = extraerValor(reader.readLine(), "Nombre:");
 	                double precio = Double.parseDouble(extraerValor(reader.readLine(), "Precio:"));
 	                String marca = extraerValor(reader.readLine(), "Marca:");
@@ -307,7 +312,7 @@ public class panelDescripcionMod extends JPanel {
 
 	                String tipo = extraerValor(reader.readLine(), "Tipo:");
 
-	                Cubos mod = new Cubos(codigo, nombre, precio, marca, ruta, tipo, 0, 0, 0);
+	                Cubos mod = new Cubos(codigo, nombre, precio, marca, ruta, tipo, 0, 0, 0,stock);
 	                listaMods.add(mod);
 
 	                // Leer la línea en blanco

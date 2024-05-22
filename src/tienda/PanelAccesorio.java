@@ -22,7 +22,7 @@ public class PanelAccesorio extends JPanel {
         lblFoto.setIcon(new ImageIcon(acce.getRuta()));
         lblFoto.setBounds(73, 72, 250, 300);
         add(lblFoto);
-        
+         
         JLabel lblCodigo = new JLabel("C: "+acce.getCodigo());
         lblCodigo.setFont(new Font("Bahnschrift", Font.PLAIN, 14));
         lblCodigo.setBounds(49, 37, 127, 24);

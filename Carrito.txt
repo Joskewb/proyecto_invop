@@ -16,3 +16,21 @@ Precio: 5000.0
 Cantidad: 3
 Costo: 15000.0
 ------------------------------
+Código: 1
+Nombre: Gan 14 MagLev UV
+Precio: 610.0
+Cantidad: 1
+Costo: 610.0
+------------------------------
+Código: 2
+Nombre: Puppet 1
+Precio: 95.0
+Cantidad: 5
+Costo: 475.0
+------------------------------
+Código: 1
+Nombre: Gan 14 MagLev UV
+Precio: 610.0
+Cantidad: 1
+Costo: 610.0
+------------------------------

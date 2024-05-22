@@ -16,6 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import tienda.AdminProductos.JFProducts;
+import tienda.entidades.Cubos;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -37,7 +40,7 @@ public class panelDescripcion extends JPanel {
 	private JButton btnSave;
 	private JLabel lblAñadirCubo;
 	private JTextField txCodigo, txTipo;
-	JComboBox cboxTipo;
+	JComboBox cboxTipo; 
 	private Cubos cuboActual;
 	private String archivo="Cubos.txt";
 	public panelDescripcion(Cubos cubo) {
@@ -350,6 +353,8 @@ public class panelDescripcion extends JPanel {
 	        while ((linea = reader.readLine()) != null) {
 	            try {
 	                int codigo = Integer.parseInt(extraerValor(linea, "Codigo:"));
+	                int stock = Integer.parseInt(extraerValor(linea, "stock:"));
+
 	                String nombre = extraerValor(reader.readLine(), "Nombre:");
 	                double precio = Double.parseDouble(extraerValor(reader.readLine(), "Precio:"));
 	                String marca = extraerValor(reader.readLine(), "Marca:");
@@ -360,7 +365,7 @@ public class panelDescripcion extends JPanel {
 	                double ancho = Double.parseDouble(extraerValor(reader.readLine(), "Ancho:"));
 	                double largo = Double.parseDouble(extraerValor(reader.readLine(), "Largo:"));
 
-	                Cubos cubo = new Cubos(codigo, nombre, precio, marca, ruta, tipo, alto, ancho, largo);
+	                Cubos cubo = new Cubos(codigo, nombre, precio, marca, ruta, tipo, alto, ancho, largo,stock);
 	                listaCubos.add(cubo);
 
 	                // Leer la línea en blanco

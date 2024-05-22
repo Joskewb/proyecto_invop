@@ -11,7 +11,7 @@ public class Pedido {
             this.precio=precio;
             this.cantidad = cantidad;
             this.costo = costo;
-   }
+   } 
 
         public int getCodigoProducto() {
             return codigoProducto;

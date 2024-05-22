@@ -12,12 +12,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import tienda.AdminProductos.JFProducts;
+import tienda.AdminProductos.inicio;
+
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.DropMode;
 
 public class Nosotros extends JFrame {
 	JPanel panelInferior;
+    private String nombreUsuario;
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -27,9 +33,10 @@ public class Nosotros extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
+			} 
 		});
 	}
+	 
 	public Nosotros() {
 		getContentPane().setBackground(Color.BLACK);
         getContentPane().setLayout(null);
@@ -105,7 +112,7 @@ public class Nosotros extends JFrame {
         btnUsuario.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                inicio n = new inicio();
+                inicio n = new inicio(nombreUsuario);
                 n.setVisible(true);
         	}
         });
@@ -135,7 +142,7 @@ public class Nosotros extends JFrame {
         btnInicio.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		dispose();
-                inicio n = new inicio();
+                inicio n = new inicio(nombreUsuario);
                 n.setVisible(true);
         	}
         });

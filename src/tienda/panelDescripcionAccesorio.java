@@ -22,6 +22,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import tienda.AdminProductos.JFProducts;
+import tienda.AdminProductos.RegistroProductoAccesorio;
+
 public class panelDescripcionAccesorio extends JPanel {
 	private JTextField txNombre;
     private JTextField txPrecio;

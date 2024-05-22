@@ -8,18 +8,8 @@ Alto: 3.0
 Ancho: 3.0
 Largo: 3.0
 ------------------------------
-Codigo: 2
-Nombre: Tornado v3 Pioneer
-Precio: 295.0
-Marca: QiYi
-Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\Tornado v3.jpg
-Tipo: 3x3
-Alto: 3.0
-Ancho: 3.0
-Largo: 3.0
-------------------------------
 Codigo: 3
-Nombre: MGC 2x2 
+Nombre: MGC 2x2
 Precio: 90.0
 Marca: YJ
 Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\MGC2x2.jpg
@@ -29,7 +19,7 @@ Ancho: 2.0
 Largo: 2.0
 ------------------------------
 Codigo: 4
-Nombre: YuChuang 5x5 
+Nombre: YuChuang 5x5
 Precio: 100.0
 Marca: YJ
 Ruta: C:\Users\Josias\eclipse-workspace\CubeStore\src\imagenes\imagenYJYuChuangv2m 5x5 (250x300).jpg
@@ -47,4 +37,24 @@ Tipo: Pyraminx
 Alto: 55.0
 Ancho: 55.0
 Largo: 55.0
+------------------------------
+Codigo: 6
+Nombre: fafa
+Precio: 12.0
+Marca: CAtolica
+Ruta: /home/breick/Descargas/descarga (1).jpeg
+Tipo: 2x2
+Alto: 44.0
+Ancho: 44.0
+Largo: 44.0
+------------------------------
+Codigo: 2
+Nombre: algo
+Precio: 12.0
+Marca: dad
+Ruta: C:\Users\Freddy Chura\Downloads\cubo.jpg
+Tipo: 5x5
+Alto: 12.0
+Ancho: 12.0
+Largo: 12.0
 ------------------------------
